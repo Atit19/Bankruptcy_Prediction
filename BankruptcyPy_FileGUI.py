@@ -13,6 +13,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import pickle
 from sklearn import svm
 from pickle import dump
 from pickle import load
@@ -42,8 +43,9 @@ st.subheader('User Input parameters')
 st.write(df)
 
 # load the model from disk
-model = load(open('C:\\Users\\Lenovo\\Bankruptcy\\test.pkl','rb'))
-prediction = model.predict(df)
+#model = load(open('C:\\Users\\Lenovo\\Bankruptcy\\test.pkl','rb'))
+pickle_in = open("test.pkl","rb")
+prediction = pickle_in.predict(df)
 st.subheader('Predicted Result')
 st.subheader('Detected As')
 
