@@ -45,6 +45,7 @@ st.write(df)
 # load the model from disk
 #model = load(open('C:\\Users\\Lenovo\\Bankruptcy\\test.pkl','rb'))
 pickle_in = open("test.pkl","rb")
+classifier=pickle.load(pickle_in)
 prediction = pickle_in.predict(df)
 st.subheader('Predicted Result')
 st.subheader('Detected As')
